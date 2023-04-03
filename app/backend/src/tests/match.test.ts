@@ -28,5 +28,4 @@ describe('test /matches route', () => {
 
     (Match.findAll as sinon.SinonStub).restore();
   });
-
 });

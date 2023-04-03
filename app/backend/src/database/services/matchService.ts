@@ -28,4 +28,13 @@ export default class MatchService {
     );
     return match;
   };
+
+  public endMatch = async (id: number) => {
+    await Match.update({ inProgress: false }, { where: { id } });
+  };
+
+  public updateMatch = async (id: number, homeTeamGoals: number, awayTeamGoals: number) => {
+    const [updated] = await Match.update({ homeTeamGoals, awayTeamGoals }, { where: { id } });
+    return updated;
+  };
 }
