@@ -33,7 +33,7 @@ describe('test /matches route', () => {
       .stub(Match, "update")
       .resolves();
 
-    chaiHttpResponse = await chai.request(app).patch('/matches/1/finish');
+    chaiHttpResponse = await chai.request(app).patch('/matches/41/finish');
 
     expect(chaiHttpResponse.status).to.be.equals(200);
     expect(chaiHttpResponse.body).to.be.deep.equal({ message: 'Finished' });
